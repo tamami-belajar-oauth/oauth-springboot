@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tamami-belajar-oauth/oauth-springboot.png?branch=master)](https://travis-ci.org/tamami-belajar-oauth/oauth-springboot)
+
 # Belajar OAuth 2.0 
 
 Paket yang dibutuhkan ada di pom.xml
