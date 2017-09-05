@@ -10,6 +10,9 @@ env:
     secure: Sfe4ylYxRMtQzOx/MjITtK4vV5lAWW/wucUqSE0YZpzpCU1y7MoyHNthizb+cN7EsTuJwfVRPRApXbdlGVSAaruVXzJUNZFp8J6iubuB7u/zJQwmhZ5OmHAsPBXXLDWl7D0Zkv3NJeNQDNRiuwlYTwnn3GpmAJAU9PAloaZdOq/F84EfMAwhYQHsKN5KMJDWJuk4w3NiDfMv6Q3FAL+T4Rw/QCa0xp7M0pjbCkx2JXgUpYPVAXq4LcS6SDp0HG3xbqk2u7IdcDOuAj7oeM/MUyZyOC3X7svdu03m945w3ktGqHM776UXeS6fNFpBebu1mv4mJyNhBO8tdv2pyE8sp7tBtQsfodoU0RiebHJZN+zr43+eFBjuOhNXWpaGzd53uh/bearyxBYTy9cxVclYz5D2HdvpFF7UZipNvwPcrbcfi1neHvoSoRaJ+jrOeyNRTRkGgRUWC4aUUky1qzj0MUqzLTpqgbqyKjRxXsr/3fBE7hawAZ5nEg9H66OsLCV/MedSYysJdIlCeiJNqUDkXvndnEg9IxodSlZOdTGivqy+tcAEAEVJsjx1Ptc1UFDYp0QYe6tQ8AyFUzOXt9/6mtWQfUFxonWFj/JTxTftG9dYOZZmpB5WKZKcIENsyS/MNkO3UIMEfZHskZi+98rx4NVam2XI56XSf1hkGct6m7Q=
 before_install:
   - chmod +x mvnw
+  - git config credential.helper "store --file=.git/credentials"; echo http://fba42e697cdba56b8c6da04eeedb4ed591a586fa:@github.com > .git/credentials 2> /dev/null
+  - git config --global user.email "tamami.oka@gmail.com"
+  - git config --global user.name "tamami"
 services:
   - postgresql
 matrix:
