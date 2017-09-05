@@ -11,7 +11,7 @@ env:
 before_install:
   - chmod +x mvnw
 services:
-  - pgsql
+  - postgresql
 matrix:
   include:
     env: DB=pgsql
@@ -19,4 +19,7 @@ matrix:
 script: mvn test -Dspring.profiles.active=$DB
 
 before_script:
-  - sh -c "psql -c 'CREATE DATABASE oauth;'"
+  - psql -c 'CREATE DATABASE oauth;' -U postgres
+  - psql -c "CREATE USER dev WITH PASSWOROD 'rahasia';" -U postgres
+  - psql -c "ALTER DATABASE oauth OWNER TO dev;" -U postgres
+  - mkdir config && cp database.travis.yml config/database.yml

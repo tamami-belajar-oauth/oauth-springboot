@@ -1,0 +1,5 @@
+postgresql: &postgresql
+adapter: postgresql
+username: dev
+password: rahasia
+database: oauth
