@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Halaman Khusus</title>
+</head>
+<body>
+    <h2>Halaman ini khusus untuk yang sudah login saja</h2>
+
+    <form th:action="@{/logout}">
+        <input type="submit" value="logout" />
+    </form>
+</body>
+</html>
