@@ -4,7 +4,6 @@ import lab.aikibo.oauthauthserver.entity.CustomUserDetails;
 import lab.aikibo.oauthauthserver.entity.Role;
 import lab.aikibo.oauthauthserver.entity.Users;
 import lab.aikibo.oauthauthserver.repo.UsersRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -21,15 +20,13 @@ import java.util.Arrays;
 @Controller
 public class OauthAuthServerApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		SpringApplication.run(OauthAuthServerApplication.class, args);
 	}
 
 
 	@GetMapping("/private")
-	public void privatePage() {
-
-	}
+	public void privatePage() {}
 
 	@Bean
 	public void authenticationManager(AuthenticationManagerBuilder builder, UsersRepo repo) throws Exception {
@@ -40,6 +37,7 @@ public class OauthAuthServerApplication {
 	    builder.userDetailsService(new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+                System.out.println("repo -> " + repo.findByUsername(s).getUsername());
                 return new CustomUserDetails(repo.findByUsername(s));
             }
         });
