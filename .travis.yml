@@ -19,5 +19,4 @@ matrix:
 script: mvn test -Dspring.profiles.active=$DB
 
 before_script:
-  - sh -c "psql -c 'CREATE USER dev;';"
-  - sh -c "psql -c 'CREATE DATABASE oauth;' -U dev;"
+  - sh -c "psql -c 'CREATE DATABASE oauth;'"
