@@ -39,7 +39,8 @@ yang memiliki akses terbatas.
    `http://localhost:8080/oauth/token?grant_type=client_credentials&username=user&password=user`.
    Parameter grant_type diisikan seperti `authorizedGrantTypes` di kelas 
    `AuthServerConfig`, sedangkan username dan password diisikan dari 
-   kelas `OauthAuthServerApplication` di _method_ / _bean_ `authenticationManager`
+   kelas `OauthAuthServerApplication` di _method_ / _bean_ `authenticationManager`.
+   Bila muncul popup untuk pengisian user / password, isikan dengan _clientId_ dan _secret_.
    
 2. Server akan mengirimkan `access_token`, _copy_ kode ini.
 
