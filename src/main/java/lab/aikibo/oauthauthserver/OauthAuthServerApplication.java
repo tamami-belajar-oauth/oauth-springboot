@@ -29,7 +29,7 @@ public class OauthAuthServerApplication {
 	@GetMapping("/private")
 	public void privatePage() {}
 
-	@Bean
+    @Bean
 	public void authenticationManager(AuthenticationManagerBuilder builder, UsersRepo repo) throws Exception {
 	    if(repo.count() == 0) {
             repo.save(new Users("user","user", Arrays.asList(new Role("USER"), new Role("ACTUATOR"))));
@@ -43,4 +43,5 @@ public class OauthAuthServerApplication {
             }
         });
     }
+
 }

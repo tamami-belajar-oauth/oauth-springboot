@@ -18,3 +18,6 @@ insert into users(username, password, role_id)
   values('tamami','rahasia',1);
 insert into users(username, password, role_id)
   values('tamami','rahasia',2);
+
+insert into users(username, password, role_id)
+  values('tamu','tamu',1);

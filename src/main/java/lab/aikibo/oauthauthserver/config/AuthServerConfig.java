@@ -8,6 +8,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor;
 
 /**
  * Created by tamami on 05/09/17.
@@ -18,6 +20,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter{
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -34,8 +37,6 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter{
                 .resourceIds("oauth2-resource")
                 .accessTokenValiditySeconds(5000)
                 .secret("rahasia");
-
-
     }
 
     @Override
