@@ -1,20 +1,9 @@
 package lab.aikibo.oauthauthserver;
 
-import lab.aikibo.oauthauthserver.entity.CustomUserDetails;
-import lab.aikibo.oauthauthserver.entity.Role;
-import lab.aikibo.oauthauthserver.entity.Users;
-import lab.aikibo.oauthauthserver.repo.UsersRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.Arrays;
 
 @SpringBootApplication
 @Controller
@@ -28,6 +17,7 @@ public class OauthAuthServerApplication {
 	@GetMapping("/private")
 	public void privatePage() {}
 
+    /*
 	@Bean
 	public void authenticationManager(AuthenticationManagerBuilder builder, UsersRepo repo) throws Exception {
 	    if(repo.count() == 0) {
@@ -42,4 +32,5 @@ public class OauthAuthServerApplication {
             }
         });
     }
+    */
 }
